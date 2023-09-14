@@ -17,7 +17,7 @@ import java.util.Iterator;
 
 public class TopKReducer extends  Reducer<Text, IntWritable, Text, IntWritable> {
 
-    private PriorityQueue<WordAndCount> pq = new PriorityQueue<WordAndCount>(10);;
+    private PriorityQueue<WordAndCount> pq = new PriorityQueue<WordAndCount>();;
 
 
     private Logger logger = Logger.getLogger(TopKReducer.class);
@@ -56,11 +56,12 @@ public class TopKReducer extends  Reducer<Text, IntWritable, Text, IntWritable> 
            logger.info("Reducer Text: " + key.toString() + " , Count: " + value.toString());
            logger.info("PQ Status: " + pq.toString());
        }
+       logger.info("BINGO :)");
 
        // keep the priorityQueue size <= heapSize
-       while (pq.size() > 10) {
-           pq.poll();
-       }
+    //    while (pq.size() > 100) {
+    //        pq.poll();
+    //    }
 
 
    }
